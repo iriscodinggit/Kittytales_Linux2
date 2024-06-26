@@ -19,7 +19,7 @@ typedef struct t_start
 	int		exitcount;
 	int		x_axis; //x players coordinates
 	int		y_axis; //y players coordinates
-	int		counter; //esto que cuenta
+	int		counter; //cuenta los pasos dados
 
 	char	**map;
 

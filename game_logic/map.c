@@ -22,8 +22,8 @@ static int	add_line(t_complete *game, char *line) //line lo recibe de gnl, hace 
 		return (0);
 	i = 0;
 	game->heightmap++;//va a añadir una línea así que height aumenta +1
-	temporary = (char **)malloc(sizeof(char *) * (game->heightmap + 1));//crea cajitas de y,temporary se va actualizando,  como duplicado del .ber (ya que no queremos editar sobre el original y perder info de coins y tener que dibujar el mapa de nuevo cada vez) añade + 1 porque esa última cajita contendrá NULL y será la señal de que se ha acabado el map (?) creo
-	temporary[game->heightmap] = NULL; //AHORA todo tiene sentido, ese + 1 era para añdir el char NULL y avisar de que ya terminó la str
+	temporary = (char **)malloc(sizeof(char *) * (game->heightmap + 1));//crea cajitas de y,temporary se va actualizando,  como duplicado del .ber (ya que no queremos editar sobre el original y perder info de coins y tener que dibujar el mapa de nuevo cada vez) añade + 1 porque esa última cajita contendrá NULL y será la señal de que se ha acabado el map 
+	temporary[game->heightmap] = NULL; //ese + 1 en malloc era para añdir el char NULL y avisar de que ya terminó la str
 	while (i < game->heightmap - 1) //heighmap menos 1 porque +1 es NULL
 	{
 		temporary[i] = game->map[i]; //en la primera ronda, map no tiene nada, pero luego sí y copia lo que ya llevaba al temporal
